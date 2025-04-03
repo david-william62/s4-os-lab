@@ -42,13 +42,13 @@ void main() {
     }
   }
 
-  for(i=0;i<n;i++) {
-    if(i==0) {
+  for (i = 0; i < n; i++) {
+    if (i == 0) {
       p[i].tat = p[i].bt;
       p[i].wt = 0;
     } else {
-      p[i].tat = p[i-1].tat + p[i].bt;
-      p[i].wt = p[i-1].wt + p[i-1].bt;
+      p[i].tat = p[i - 1].tat + p[i].bt;
+      p[i].wt = p[i - 1].wt + p[i - 1].bt;
     }
     t_tat += p[i].tat;
     t_wt += p[i].wt;
@@ -59,12 +59,12 @@ void main() {
 
   printf("\nPROCESS\t\tPRIORITY\tBST TIME\tTURN AROUND TIME\tWAITING TIME");
   for (i = 0; i < n; i++) {
-    printf("\n%d\t\t%d\t\t%d\t\t%d\t\t%d\n", p[i].id, p[i].priority, p[i].bt, p[i].tat, p[i].wt);
+    printf("\n%d\t\t%d\t\t%d\t\t%d\t\t%d\n", p[i].id, p[i].priority, p[i].bt,
+           p[i].tat, p[i].wt);
   }
 
-  printf("Total Waiting time: %f\n",t_wt);
-  printf("Average Waiting time: %f\n",a_wt);
-  printf("Total turnaround time: %f\n",t_tat);
-  printf("Average Waiting time: %f\n",a_tat);
+  printf("Total Waiting time: %f\n", t_wt);
+  printf("Average Waiting time: %f\n", a_wt);
+  printf("Total turnaround time: %f\n", t_tat);
+  printf("Average Waiting time: %f\n", a_tat);
 }
-
